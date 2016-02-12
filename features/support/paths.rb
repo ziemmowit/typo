@@ -15,12 +15,14 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
+    when /^the admin content page$/
+      '/admin/content'
     when /^the new article page$/
       '/admin/content/new'
     when /^the edit article page for "(.*)"$/
       "/admin/content/edit/#{Article.find_by_title($1).id}"
     when /^the new categories page$/
-      '/admin/category/new'
+      '/admin/categories/new'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

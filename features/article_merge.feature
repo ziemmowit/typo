@@ -23,7 +23,7 @@ Feature: Be able to merge articles
     Given I am on the edit article page for "Lorem ipsum"
     Then I should see merge_with
     And I fill in "merge_with" with "4"
-    And then I press "Merge"
+    And I press "Merge"
     Then the article "Lorem ipsum" should have body "Lorem Ipsum dolor sit amet Pellentesque non rhoncus"
-    And the comment "Maecenas faucibus at" should belong to "Foobar" 
-    And I should be on the articles page for "Lorem ipsum"
+    And the comment "Maecenas faucibus at" should belong to "Lorem ipsum" 
+    And I should be on the edit article page for "Lorem ipsum"

@@ -22,19 +22,11 @@ Then /^I should see merge_with$/ do
   end
 end
 
-Then /^then I press "(.*?)"$/ do |arg1|
-  if page.respond_to? :should
-    page.should have_no_xpath('//input[@id="merge_with"]')
-  else
-    assert page.has_no_xpath?('//input[@id="merge_with"]')
-  end
-end
-
 Then /^the article "(.*?)" should have body "(.*?)"$/ do |arg1, arg2|
-  Article.find_by_title(title).body.should eq body
+  Article.find_by_title(arg1).body.should eq arg2
 end
 
 Then /^the comment "(.*?)" should belong to "(.*?)"$/ do |arg1, arg2|
-  article = Article.find_by_title(article_title)
-  Comment.find_by_body(comment).article.id.should eq article.id
+  article = Article.find_by_title(arg2)
+  Comment.find_by_body(arg1).article.id.should eq article.id
 end

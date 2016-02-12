@@ -14,7 +14,7 @@ Feature: Create Categories
     And I fill in "category_permalink" with "foobar"
     And I fill in "category_description" with "Lorem ipsum dolor sit amet"
     And I press "Save"
-    Then I should be on the admin content page
+    Then I should be on the new categories page
     When I go to the home page
     Then I should see "Foobar"
     Then I should see "foobar"
